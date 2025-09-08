@@ -49,7 +49,6 @@ This project uses a `prepare` script in the root `package.json` that automatical
 
     ```bash
     git clone <repository-url>
-    cd mini_reconciliation_tool
     ```
 
 2.  **Install dependencies:**
