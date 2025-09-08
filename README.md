@@ -84,6 +84,18 @@ npm run dev
 
 This will start the development servers for all the packages in the monorepo.
 
+## Test Credentials
+
+The dashboard is configured with mock authentication for development testing. Here are a couple of credentials you can use to log in:
+
+- **Email:** `user@niobi.co`
+- **Password:** `password`
+
+- **Email:** `admin@niobi.co`
+- **Password:** `admin123`
+
+For a more comprehensive list of test users and additional details on the mock authentication, please refer to the [TEST_CREDENTIALS.md](packages/dashboard-shell/TEST_CREDENTIALS.md) file.
+
 ### Other useful commands
 
 - `npm run build`: Builds all the packages in the monorepo.
