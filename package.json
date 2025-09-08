@@ -1,0 +1,27 @@
+{
+  "name": "customer-success-dashboard",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "npm run dev --workspaces",
+    "build": "npm run build --workspaces",
+    "lint": "npm run lint --workspaces",
+    "test": "npm run test --workspaces",
+    "clean": "npm run clean --workspaces",
+    "dev:dashboard": "npm run dev --workspace=dashboard-shell",
+    "build:dashboard": "npm run build --workspace=dashboard-shell",
+    "preview": "npm run preview --workspace=dashboard-shell"
+  },
+  "devDependencies": {
+    "eslint": "^9.9.1",
+    "typescript": "^5.5.3"
+  },
+  "compilerOptions": {
+    "incremental": true,
+    "tsBuildInfoFile": "./.tsbuildinfo"
+  }
+}
