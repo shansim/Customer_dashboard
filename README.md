@@ -33,7 +33,6 @@ The project is organized as a monorepo using npm workspaces. This structure allo
 
     ```bash
     git clone <repository-url>
-    cd mini_reconciliation_tool
     ```
 
 2.  **Install dependencies:**
