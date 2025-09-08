@@ -14,7 +14,8 @@
     "clean": "npm run clean --workspaces",
     "dev:dashboard": "npm run dev --workspace=dashboard-shell",
     "build:dashboard": "npm run build --workspace=dashboard-shell",
-    "preview": "npm run preview --workspace=dashboard-shell"
+    "preview": "npm run preview --workspace=dashboard-shell",
+    "prepare": "npm run build --workspaces"
   },
   "devDependencies": {
     "eslint": "^9.9.1",
