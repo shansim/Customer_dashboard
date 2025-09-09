@@ -380,7 +380,7 @@ class SessionManager {
 
 class AuthServiceImpl implements AuthService {
   private rateLimiter: RateLimiter;
-  private sessionManager: SessionManager;
+  protected sessionManager: SessionManager;
 
   constructor() {
     this.rateLimiter = new RateLimiter();
@@ -818,7 +818,7 @@ class AuthServiceImpl implements AuthService {
       const session = this.sessionManager.getSession();
       await auditLogger.logCSRFMismatch(
         session?.user.id,
-        (session as unknown)?.sessionId
+        (session as any)?.sessionId
       );
       
       // Clear session on CSRF mismatch

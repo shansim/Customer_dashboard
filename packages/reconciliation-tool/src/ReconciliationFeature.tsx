@@ -8,7 +8,7 @@ import { FullScreenTransactionView } from './components/FullScreenTransactionVie
 import { ExportSection } from './components/ExportSection';
 import { CircleChart } from './components/CircleChart';
 
-import { FileUploadState, ReconciliationResult, TransactionTableType } from './types/transaction';
+import { FileUploadState, ReconciliationResult, TransactionTableType, Transaction, MatchedTransaction } from './types/transaction';
 import { reconcileTransactions } from './utils/reconciliation';
 import { detectDuplicates } from './utils/duplicateDetection';
 
@@ -58,7 +58,7 @@ export function ReconciliationFeature(props: ReconciliationFeatureProps) {
     isOpen: boolean;
     type: TransactionTableType | null;
     title: string;
-    data: unknown[];
+    data: Transaction[] | MatchedTransaction[];
     icon: React.ReactNode;
   }>({
     isOpen: false,
@@ -103,7 +103,7 @@ export function ReconciliationFeature(props: ReconciliationFeatureProps) {
     setFullScreenView({ isOpen: false, type: null, title: '', data: [], icon: null });
   };
 
-  const openFullScreen = (type: TransactionTableType, title: string, data: unknown[], icon: React.ReactNode) => {
+  const openFullScreen = (type: TransactionTableType, title: string, data: Transaction[] | MatchedTransaction[], icon: React.ReactNode) => {
     console.log('Opening full screen for:', { type, title, dataLength: data.length });
     setFullScreenView({
       isOpen: true,

@@ -41,7 +41,11 @@ This project uses a `prepare` script in the root `package.json` that automatical
 ### Prerequisites
 
 - [Node.js](https://nodejs.org/) (v18.17.0 or as specified in the `.nvmrc` file)
-- [npm](https://www.npmjs.com/) (v8 or higher)
+- [pnpm](https://pnpm.io/) (v8 or higher)
+
+### Why pnpm?
+
+This project is configured as a monorepo and uses `pnpm` workspaces. Using `pnpm` is **required** to ensure that dependencies, especially local packages within the monorepo (like `shared-components`), are correctly linked. The `workspace:*` protocol used in the `package.json` files is a `pnpm`-specific feature that guarantees you are using the code from the local workspace.
 
 ### Installation
 
@@ -51,10 +55,18 @@ This project uses a `prepare` script in the root `package.json` that automatical
     git clone <repository-url>
     ```
 
-2.  **Install dependencies:**
+2.  **Install pnpm:**
 
+    If you don't have pnpm installed, you can install it globally using npm:
     ```bash
-    npm install
+    npm install -g pnpm
+    ```
+
+3.  **Install dependencies:**
+
+    From the root of the project, run:
+    ```bash
+    pnpm install
     ```
 
     (This will also trigger the `prepare` script and build all the packages.)
@@ -66,7 +78,7 @@ This project uses a `prepare` script in the root `package.json` that automatical
 Once the dependencies are installed and the packages are built, you can run the development server for the `dashboard-shell`:
 
 ```bash
-npm run dev:dashboard
+pnpm run dev:dashboard
 ```
 
 This will start the development server for the `dashboard-shell` package, and you can access the application at `http://localhost:3000`.
@@ -74,7 +86,7 @@ This will start the development server for the `dashboard-shell` package, and yo
 Alternatively, you can run the development server for all packages simultaneously:
 
 ```bash
-npm run dev
+pnpm run dev
 ```
 
 This will start the development servers for all the packages in the monorepo.
@@ -93,6 +105,6 @@ For a more comprehensive list of test users and additional details on the mock a
 
 ### Other useful commands
 
-- `npm run build`: Builds all the packages in the monorepo.
-- `npm run test`: Runs the tests for all the packages.
-- `npm run lint`: Lints the code in all the packages.
+- `pnpm run build`: Builds all the packages in the monorepo.
+- `pnpm run test`: Runs the tests for all the packages.
+- `pnpm run lint`: Lints the code in all the packages.

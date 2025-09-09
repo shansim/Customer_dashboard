@@ -398,7 +398,7 @@ class AuditLoggerService {
       componentStack,
       url: window.location.href,
       timestamp: new Date().toISOString()
-    }, 'MEDIUM');
+    });
   }
 
   /**

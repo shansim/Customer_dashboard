@@ -63,6 +63,6 @@ describe('DashboardLayout', () => {
 
     // Check if basic elements are present
     expect(screen.getByText('Niobi')).toBeInTheDocument();
-    """    """    expect(screen.getByText('Customer Success Dashboard')).toBeInTheDocument();
+    expect(screen.getByText('Customer Success Dashboard')).toBeInTheDocument();
   });
-});"""""
+});

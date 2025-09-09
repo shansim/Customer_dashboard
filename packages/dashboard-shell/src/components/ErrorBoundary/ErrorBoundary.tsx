@@ -50,7 +50,7 @@ export class ErrorBoundary extends Component<Props, State> {
       this.props.name || 'Unknown Component',
       error.message,
       error.stack || '',
-      errorInfo.componentStack
+      errorInfo.componentStack ?? ''
     );
 
     // Store error info for display
